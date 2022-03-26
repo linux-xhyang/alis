@@ -694,6 +694,11 @@ function configuration() {
         #localectl set-locale "$VARIABLE"
         echo -e "$VARIABLE" >> /mnt/etc/locale.conf
     done
+
+    for VARIABLE in "${ENVIRONMENT_CONF[@]}"; do
+        echo -e "$VARIABLE" >> /mnt/etc/environment
+    done
+
     locale-gen
     arch-chroot /mnt locale-gen
     echo -e "$KEYMAP\n$FONT\n$FONT_MAP" > /mnt/etc/vconsole.conf
