@@ -1601,7 +1601,7 @@ function desktop_environment_kde() {
 }
 
 function desktop_environment_xfce() {
-    pacman_install "xfce4 xfce4-goodies lightdm lightdm-gtk-greeter xorg-server pavucontrol pulseaudio"
+    pacman_install "xfce4 xfce4-goodies lightdm lightdm-gtk-greeter xorg-server pavucontrol pulseaudio network-manager-applet udisks2"
     arch-chroot /mnt systemctl enable lightdm.service
 }
 
